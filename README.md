@@ -43,6 +43,11 @@ El consumo de recursos no aumenta mucho ya que estoy consumiendo lentamente:
 Teniendo en cuenta los conceptos vistos de condición de carrera y sincronización, haga una nueva versión -más eficiente- del ejercicio anterior (el buscador de listas negras). En la versión actual, cada hilo se encarga de revisar el host en la totalidad del subconjunto de servidores que le corresponde, de manera que en conjunto se están explorando la totalidad de servidores. Teniendo esto en cuenta, haga que:
 
 - La búsqueda distribuida se detenga (deje de buscar en las listas negras restantes) y retorne la respuesta apenas, en su conjunto, los hilos hayan detectado el número de ocurrencias requerido que determina si un host es confiable o no (_BLACK_LIST_ALARM_COUNT_).
+
+Creamos una clase controller la cual sincronizará los threads y llevará un registro global del numero de veces que una IP fue encontrada en una lista negra. El mecanismo usado en la implementación realizada nos permitirá aplicar temas expuestos en clase sobre como evitar los deadLocks. 
+
+![image](https://user-images.githubusercontent.com/25957863/186451468-54b345d9-31f2-4c84-b114-429db2ee0e94.png)
+
 - Lo anterior, garantizando que no se den condiciones de carrera.
 
 ##### Parte III. – Avance para el martes, antes de clase.
