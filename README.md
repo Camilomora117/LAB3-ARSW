@@ -20,6 +20,11 @@ Las clases responsables del consumo es Consumer y Producer.
 
 2. Haga los ajustes necesarios para que la solución use más eficientemente la CPU, teniendo en cuenta que -por ahora- la producción es lenta y el consumo es rápido. Verifique con JVisualVM que el consumo de CPU se reduzca.
 
+El consumo de recursos era alto debido a la cantidad de llamadas que realiza el consumidor, para esto hay que limitar esas llamadas:
+
+![image](https://user-images.githubusercontent.com/98135134/186427856-06d414e1-0b96-4582-94b7-58d1c22b7f47.png)
+
+Ahora el programa solo podra hacer una llamada cada 1000 1 segundo. Asi el consumo de recursos baja drasticamente.
 
 3. Haga que ahora el productor produzca muy rápido, y el consumidor consuma lento. Teniendo en cuenta que el productor conoce un límite de Stock (cuantos elementos debería tener, a lo sumo en la cola), haga que dicho límite se respete. Revise el API de la colección usada como cola para ver cómo garantizar que dicho límite no se supere. Verifique que, al poner un límite pequeño para el 'stock', no haya consumo alto de CPU ni errores.
 
@@ -45,12 +50,6 @@ Sincronización y Dead-Locks.
 	* El juego podría nunca tener un único ganador. Lo más probable es que al final sólo queden dos, peleando indefinidamente quitando y sumando puntos de vida.
 
 2. Revise el código e identifique cómo se implemento la funcionalidad antes indicada. Dada la intención del juego, un invariante debería ser que la sumatoria de los puntos de vida de todos los jugadores siempre sea el mismo(claro está, en un instante de tiempo en el que no esté en proceso una operación de incremento/reducción de tiempo). Para este caso, para N jugadores, cual debería ser este valor?.
-
-El consumo de recursos era alto debido a la cantidad de llamadas que realiza el consumidor, para esto hay que limitar esas llamadas:
-
-![image](https://user-images.githubusercontent.com/98135134/186427856-06d414e1-0b96-4582-94b7-58d1c22b7f47.png)
-
-Ahora el programa solo podra hacer una llamada cada 1000 1 segundo. Asi el consumo de recursos baja drasticamente.
 
 3. Ejecute la aplicación y verifique cómo funcionan las opción ‘pause and check’. Se cumple el invariante?.
 
