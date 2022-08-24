@@ -50,6 +50,8 @@ Creamos una clase controller la cual sincronizará los threads y llevará un reg
 
 - Lo anterior, garantizando que no se den condiciones de carrera.
 
+Haciendo uso de el mecanismo de exclusión mutua podemos asegurar que los hilos que comparten el mismo recurso, en nuestro caso (ocurrencesCount) no ingresen a modificarlo o consultarlo al mismo tiempo.
+
 ##### Parte III. – Avance para el martes, antes de clase.
 
 Sincronización y Dead-Locks.
