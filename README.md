@@ -67,7 +67,13 @@ Sincronización y Dead-Locks.
 
 2. Revise el código e identifique cómo se implemento la funcionalidad antes indicada. Dada la intención del juego, un invariante debería ser que la sumatoria de los puntos de vida de todos los jugadores siempre sea el mismo(claro está, en un instante de tiempo en el que no esté en proceso una operación de incremento/reducción de tiempo). Para este caso, para N jugadores, cual debería ser este valor?.
 
+Para el N correspondiente al número de inmortrales se tiene la variable "numOfImmortals" la cuál toma su valor de acuerdo al valor ingreasado en el JTextField de la clase ControlFrame. Seguido de esto se crean N inmortales y se agregan a una lista. Para que cada inmortal conozca a quien atacar se usa un random y una variable de verificación del index propio. El valor de la sumatoria de de los puntos de vida de todos los jugadores siempre debe ser (N * 100).
+
 3. Ejecute la aplicación y verifique cómo funcionan las opción ‘pause and check’. Se cumple el invariante?.
+
+![image](https://user-images.githubusercontent.com/25957863/187224980-6a31c927-73bc-4ae0-b601-081304e83245.png)
+
+No se cumple el invariante porque según funcion para calcualr el valor del N que definimos en el apartado anterior. El valor de la sumatoria debería ser (5*100) = 500
 
 4. Una primera hipótesis para que se presente la condición de carrera para dicha función (pause and check), es que el programa consulta la lista cuyos valores va a imprimir, a la vez que otros hilos modifican sus valores. Para corregir esto, haga lo que sea necesario para que efectivamente, antes de imprimir los resultados actuales, se pausen todos los demás hilos. Adicionalmente, implemente la opción ‘resume’.
 
