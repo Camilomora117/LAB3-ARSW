@@ -73,9 +73,11 @@ Para el N correspondiente al número de inmortrales se tiene la variable "numOfI
 
 ![image](https://user-images.githubusercontent.com/25957863/187224980-6a31c927-73bc-4ae0-b601-081304e83245.png)
 
-No se cumple el invariante porque según funcion para calcualr el valor del N que definimos en el apartado anterior. El valor de la sumatoria debería ser (5*100) = 500
+No se cumple el invariante porque según la funcion para calcualr el valor del N que definimos en el apartado anterior. El valor de la sumatoria debería ser (5 * 100) = 500
 
 4. Una primera hipótesis para que se presente la condición de carrera para dicha función (pause and check), es que el programa consulta la lista cuyos valores va a imprimir, a la vez que otros hilos modifican sus valores. Para corregir esto, haga lo que sea necesario para que efectivamente, antes de imprimir los resultados actuales, se pausen todos los demás hilos. Adicionalmente, implemente la opción ‘resume’.
+
+
 
 5. Verifique nuevamente el funcionamiento (haga clic muchas veces en el botón). Se cumple o no el invariante?.
 
