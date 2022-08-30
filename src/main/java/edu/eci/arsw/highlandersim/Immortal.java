@@ -32,7 +32,7 @@ public class Immortal extends Thread {
 
     public void run() {
 
-        while (!stop && health>0) {
+        while (health>0) {
             synchronized (this) {
                 while (detener) {
                     try {
@@ -42,21 +42,15 @@ public class Immortal extends Thread {
                     }
                 }
             }
-
             Immortal im;
             synchronized (immortalsPopulation) {
-
                 int myIndex = immortalsPopulation.indexOf(this);
-
                 int nextFighterIndex = r.nextInt(immortalsPopulation.size());
-
                 //avoid self-fight
                 if (nextFighterIndex == myIndex) {
                     nextFighterIndex = ((nextFighterIndex + 1) % immortalsPopulation.size());
                 }
-
                 im = immortalsPopulation.get(nextFighterIndex);
-
                 this.fight(im);
             }
             try {
@@ -64,11 +58,9 @@ public class Immortal extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
-
     }
-
+    
     public Immortal() {
         this.immortalsPopulation = null;
         this.name = null;
