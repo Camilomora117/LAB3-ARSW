@@ -93,9 +93,9 @@ Seguido de esto modificamos el método run de la clase Thread, esto para que se 
 
 5. Verifique nuevamente el funcionamiento (haga clic muchas veces en el botón). Se cumple o no el invariante?.
 
-No se cumple la invariante.
+Si se cumple la invariante.
 
-
+![image](https://user-images.githubusercontent.com/25957863/187559903-24d1c4cf-4916-4f0f-80b3-37118a73f301.png)
 
 6. Identifique posibles regiones críticas en lo que respecta a la pelea de los inmortales. Implemente una estrategia de bloqueo que evite las condiciones de carrera. Recuerde que si usted requiere usar dos o más ‘locks’ simultáneamente, puede usar bloques sincronizados anidados:
 
