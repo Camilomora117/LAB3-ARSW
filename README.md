@@ -87,7 +87,10 @@ Para la clase controlFrame usamos la dos métodos anteriormente implementados:
 
 ![image](https://user-images.githubusercontent.com/25957863/187555272-a4b6fe7e-e576-4153-9e10-2bbb2b9850f0.png)
 
-Y modificamos el método run de la clase Thread para que sincronice los hilos y los ponga a esperar mientras se haya presionado la el botón "Pause and check"
+Seguido de esto modificamos el método run de la clase Thread, esto para que se sincronicen los hilos y los ponga a esperar mientras se haya presionado la el botón "Pause and check". 
+
+![image](https://user-images.githubusercontent.com/25957863/187556107-eda0c407-2a53-4e05-b702-16d4bba58171.png)
+
 5. Verifique nuevamente el funcionamiento (haga clic muchas veces en el botón). Se cumple o no el invariante?.
 
 6. Identifique posibles regiones críticas en lo que respecta a la pelea de los inmortales. Implemente una estrategia de bloqueo que evite las condiciones de carrera. Recuerde que si usted requiere usar dos o más ‘locks’ simultáneamente, puede usar bloques sincronizados anidados:
