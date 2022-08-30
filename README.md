@@ -106,6 +106,7 @@ No se cumple la invariante.
 		}
 	}
 	```
+![image](https://user-images.githubusercontent.com/25957863/187556425-1413ecee-0c93-4ca6-9a38-786d7821592a.png)
 
 7. Tras implementar su estrategia, ponga a correr su programa, y ponga atención a si éste se llega a detener. Si es así, use los programas jps y jstack para identificar por qué el programa se detuvo.
 
