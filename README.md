@@ -120,6 +120,19 @@ Si se cumple la invariante.
 
 11. Para finalizar, implemente la opción STOP.
 
+Agregamos el método stop en la clase immortal.
+
+![image](https://user-images.githubusercontent.com/25957863/187561656-31176be3-4989-439b-a6bc-b26554758700.png)
+
+Agregamos una validación simple al método run:
+
+![image](https://user-images.githubusercontent.com/25957863/187561712-21384a12-ece3-4068-a988-fd0fbd695a69.png)
+
+Agregamos el botón y su comportamiento en la clase ControlFrame.
+
+![image](https://user-images.githubusercontent.com/25957863/187561498-bc09c05f-02f7-4aca-b411-30b3eeacbeb0.png)
+
+
 <!--
 ### Criterios de evaluación
 
