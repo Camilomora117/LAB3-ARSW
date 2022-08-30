@@ -59,6 +59,9 @@ public class Immortal extends Thread {
                 e.printStackTrace();
             }
         }
+        if (health == 0) {
+            immortalsPopulation.remove(this);
+        }
     }
 
     public Immortal() {
