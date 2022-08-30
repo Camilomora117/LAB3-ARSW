@@ -19,6 +19,8 @@ public class Immortal extends Thread {
 
     private boolean detener = false;
 
+    private boolean stop = false;
+
     public Immortal(String name, List<Immortal> immortalsPopulation, int health, int defaultDamageValue, ImmortalUpdateReportCallback ucb) {
         super(name);
         this.updateCallback = ucb;
@@ -30,7 +32,7 @@ public class Immortal extends Thread {
 
     public void run() {
 
-        while (health>0) {
+        while (!stop && health > 0) {
             synchronized (this) {
                 while (detener) {
                     try {
@@ -58,30 +60,29 @@ public class Immortal extends Thread {
             }
         }
     }
-    
+
     public Immortal() {
         this.immortalsPopulation = null;
         this.name = null;
     }
-    
+
     /*
     Se modifica el método fight y se agrega un métopdo de bloqueo
-    */
+     */
     public void fight(Immortal i2) {
-        String report ="";
+        String report = "";
         synchronized (i2) {
-            if (i2.getHealth()>0) {
-                if(!(immortalsPopulation.size()==2 && i2.getHealth()-defaultDamageValue==0)) {
+            if (i2.getHealth() > 0) {
+                if (!(immortalsPopulation.size() == 2 && i2.getHealth() - defaultDamageValue == 0)) {
                     i2.changeHealth(i2.getHealth() - defaultDamageValue);
                     this.health += defaultDamageValue;
-                    report="Fight: " + this + " vs " + i2+"\n";
+                    report = "Fight: " + this + " vs " + i2 + "\n";
                 }
             } else {
-                report=this + " says:" + i2 + " is already dead!\n";      
-            }          
+                report = this + " says:" + i2 + " is already dead!\n";
+            }
         }
-        if(!report.equals(""))
-        {
+        if (!report.equals("")) {
             synchronized (updateCallback) {
                 updateCallback.processReport(report);
             }
@@ -96,14 +97,19 @@ public class Immortal extends Thread {
         return health;
     }
 
-    synchronized void detener(){
-        detener=true;
+    synchronized void detener() {
+        detener = true;
     }
-    synchronized void renaudar(){
-        detener=false;
+
+    synchronized void renaudar() {
+        detener = false;
         notify();
     }
-    
+
+    public void stopHilo() {
+        stop = true;
+    }
+
     @Override
     public String toString() {
 
