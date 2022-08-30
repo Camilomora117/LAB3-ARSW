@@ -95,7 +95,7 @@ public class ControlFrame extends JFrame {
                 statisticsLabel.setText("<html>" + immortals.toString() + "<br>Health sum:" + sum);
             }
         });
-        
+
         toolBar.add(btnPauseAndCheck);
 
         JButton btnResume = new JButton("Resume");
@@ -109,6 +109,21 @@ public class ControlFrame extends JFrame {
         });
 
         toolBar.add(btnResume);
+        /*
+        Implementación del botón Stop
+         */
+        JButton btnStop = new JButton("Stop");
+
+        btnStop.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                for (Immortal im : immortals) {
+                    im.stopHilo();
+                    btnStart.setEnabled(true);
+                }
+            }
+        });
+
+        toolBar.add(btnStop);
 
         JLabel lblNumOfImmortals = new JLabel("num. of immortals:");
 
@@ -123,11 +138,7 @@ public class ControlFrame extends JFrame {
         numOfImmortals.setColumns(
                 10);
 
-        JButton btnStop = new JButton("STOP");
-
         btnStop.setForeground(Color.RED);
-
-        toolBar.add(btnStop);
 
         scrollPane = new JScrollPane();
 
