@@ -18,8 +18,6 @@ public class Immortal extends Thread {
     private final Random r = new Random(System.currentTimeMillis());
 
     private boolean detener = false;
-    
-    private boolean stop = false;
 
     public Immortal(String name, List<Immortal> immortalsPopulation, int health, int defaultDamageValue, ImmortalUpdateReportCallback ucb) {
         super(name);
@@ -104,9 +102,6 @@ public class Immortal extends Thread {
     synchronized void renaudar(){
         detener=false;
         notify();
-    }
-    public void stopHilo() {
-        stop = true;
     }
     
     @Override
