@@ -69,6 +69,14 @@ public class Immortal extends Thread {
 
     }
 
+    public Immortal() {
+        this.immortalsPopulation = null;
+        this.name = null;
+    }
+    
+    /*
+    Se modifica el método fight y se agrega un métopdo de bloqueo
+    */
     public void fight(Immortal i2) {
         String report ="";
         synchronized (i2) {
